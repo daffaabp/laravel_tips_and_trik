@@ -32,7 +32,7 @@ Route::get('/student-detail/{id}', [StudentController::class, 'show'])->middlewa
 
 Route::get('/student-add', [StudentController::class, 'create'])->middleware(['auth', 'must-admin-or-teacher']);
 Route::post('/student', [StudentController::class, 'store'])->middleware('auth');
-Route::get('/student-edit/{id}', [StudentController::class, 'edit'])->middleware(['auth', 'must-admin-or-teacher']);
+Route::get('/student-edit/{id}', [StudentController::class, 'edit'])->middleware(['auth', 'must-admin-or-teacher']);    
 Route::put('/student/{id}', [StudentController::class, 'update'])->middleware(['auth', 'must-admin-or-teacher']);
 
 Route::get('/student-delete/{id}', [StudentController::class, 'delete'])->middleware(['auth', 'must-admin']);
@@ -67,6 +67,10 @@ Route::get('/teacher-edit/{id}', [TeacherController::class, 'edit'])->middleware
 Route::put('/teacher/{id}', [TeacherController::class, 'update'])->middleware('auth');
 Route::get('/teacher-delete/{id}', [TeacherController::class, 'delete'])->middleware('auth');
 Route::delete('/teacher-destroy/{id}', [TeacherController::class, 'destroy'])->middleware('auth');
+
+// Route::get('/student-mass-update', [StudentController::class, 'massUpdate']);
+
+
 
 // Route Views
 // Route::get('/about', function () {

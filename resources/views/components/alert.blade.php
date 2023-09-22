@@ -1,3 +1,3 @@
-<div class="alert alert-{{ $typeg }}" role="alert">
+<div class="alert alert-{{ $type }}" role="alert">
     {{ $message }}
 </div>

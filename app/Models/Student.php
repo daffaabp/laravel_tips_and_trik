@@ -4,8 +4,8 @@ namespace App\Models;
 
 use App\Models\ClassRoom;
 use App\Models\Extracurricular;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Student extends Model
@@ -17,16 +17,14 @@ class Student extends Model
         'gender',
         'nis',
         'class_id',
-        'image'
+        'image',
+        'slug',
     ];
 
-
-
-    public function class()
+    public function class ()
     {
         return $this->belongsTo(ClassRoom::class);
     }
-
 
     public function extracurriculars()
     {

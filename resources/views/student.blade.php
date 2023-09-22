@@ -48,17 +48,17 @@
                             @if (Auth::user()->role_id != 1 && Auth::user()->role_id != 2)
                                 -
                             @else
-                                <a href="student-detail/{{ $data->name }}">
+                                <a href="student-detail/{{ $data->slug }}">
                                     <button type="button" class="btn btn-primary">Detail</button>
                                 </a>
 
-                                <a href="student-edit/{{ $data->id }}">
+                                <a href="student-edit/{{ $data->slug }}">
                                     <button type="button" class="btn btn-warning">Edit</button>
                                 </a>
                             @endif
 
                             @if (Auth::user()->role_id == 1)
-                                <a href="student-delete/{{ $data->id }}">
+                                <a href="student-delete/{{ $data->slug }}">
                                     <button type="button" class="btn btn-danger">Delete</button>
                                 </a>
                             @endif
